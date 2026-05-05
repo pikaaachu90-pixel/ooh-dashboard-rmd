@@ -1,0 +1,1 @@
+const express = require('express'); const cors = require('cors'); const analyticsRoutes = require('./routes/analytics'); const app = express(); app.use(cors()); app.use(express.json()); app.use('/api', analyticsRoutes); app.get('/health', (_,res)=>res.json({status:'ok'})); app.listen(4000, ()=>console.log('Backend running on 4000'));
